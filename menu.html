@@ -1,15 +1,111 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="da">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-    <link rel="stylesheet" href="">
+    <title>Cucina Fibonacci</title>
 </head>
 
-<body>
-    <script src=""></script>
-</body>
+<section id="bistro">
+    <h1>MENU</h1>
+</section>
 
-</html>
+
+<nav class="menu">
+    <button class="filter valgt" data-retter="alle">Alle</button>
+    <button class="filter" data-retter="antipasti">Antipasti</button>
+    <button class="filter" data-retter="secondi">Secondi</button>
+    <button class="filter" data-retter="dolce">Dolce</button>
+    <button class="filter" data-retter="bevande">Bevande</button>
+    <h2>Alle</h2>
+</nav>
+
+<!--
+
+//***************** STYLE ***************//
+-->
+<style>
+    nav {
+        text-align: center;
+        padding: 10px;
+    }
+
+
+    nav valgt {
+        background-color: red;
+    }
+
+
+
+    button {
+        padding: 8px;
+        border: none;
+        align-items: center;
+        font-family: 'optima';
+        background-color: transparent;
+        cursor: pointer;
+        color: black;
+    }
+
+
+    h1 {
+        font-family: 'optima';
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        text-align: center;
+    }
+</style>
+
+
+
+
+
+
+
+
+
+
+<body>
+
+
+    <template>
+        <article class="retter">
+            <h2></h2>
+            <p class="id"></p>
+            <p class="kategori"></p>
+            <p class="pris"></p>
+            <p class="kort"></p>
+            <p class="lang"></p>
+            <p class="allergener"></p>
+        </article>
+    </template>
+
+
+    <section id="detalje" class="skjul">
+        <button>X</button>
+        <article id="mad">
+            <h2></h2>
+            <p class="id"></p>
+            <p class="kategori"></p>
+            <p class="pris"></p>
+            <p class="kort"></p>
+            <p class="lang"></p>
+            <p class="allergener"></p>
+        </article>
+    </section>
+
+    <main></main>
+
+
+
+
+
+
+
+    <script>
+
+
+
+    </script>
+</body></html>
