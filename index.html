@@ -58,6 +58,16 @@
         background-size: contain;
     }
 
+    /*SPLASH BILLEDE KUN 1 BILLEDE*/
+
+    .pic_1 {
+        display: none;
+    }
+
+    .pic_3 {
+        display: none;
+    }
+
     footer {
         background-color: #D9D0C1;
         display: flex;
@@ -69,20 +79,23 @@
             /*height: 100%;*/
             display: grid;
             grid-gap: 5px;
-            grid-template-columns: repeat(6, 1fr);
+            grid-template-columns: repeat(5, 1fr);
             /*            grid-template-rows: repeat(4, 1fr);*/
         }
 
 
         #splash img {
-            width: 37vw;
+            width: 33.33vw;
             height: 100vh;
             border: none;
-
         }
 
+        .pic_1 img {
+            width: 33.3vw;
+        }
 
         .pic_1 {
+            display: block;
             grid-column: 1 / 2;
             justify-self: stretch;
             /*            grid-row: 1/4;*/
@@ -100,6 +113,7 @@
         }
 
         .pic_3 {
+            display: block;
             grid-column: 4 / 6;
             justify-self: stretch;
             /*            grid-row: 1/4;*/
@@ -119,38 +133,50 @@
 
         .wrapper_2 {
             display: grid;
-            grid-gap: 10px;
-            grid-template-columns: repeat (3, 1fr);
+            grid-gap: 5px;
+            grid-template-columns: repeat (4, 1fr);
         }
 
         .lady_pic {
-            width: 60vw;
-            grid-column: 1/3;
+            width: 65vw;
+            grid-column: 1/4;
+        }
+
+        .lady_pic img {
+            height: 95vh;
         }
 
         .wine_pic {
-            width: 40vw;
-            grid-column: 3/4;
+            width: 33.3vw;
+            grid-column: 4/5;
+        }
+
+        .wine_pic img {
+            height: 95vh;
         }
 
         .booking {
-            padding-bottom: 2rem;
-            padding-left: 5rem;
-            padding-right: 5rem;
-
             display: grid;
             grid-gap: 10px;
             grid-template-columns: repeat (3, 1fr);
+            padding-bottom: 3rem;
+            margin: 4rem;
         }
 
         .varer {
             width: 50vw;
             grid-column: 1/3;
-            padding-right: 2rem;
+            padding-left: 8rem;
+        }
+
+        .varer img {
+            height: 73vh;
+            width: 27vw;
         }
 
         .reservation {
-
+            padding-right: 6.6rem;
+            margin-right: 5rem;
             width: 40vw;
             grid-column: 3/4;
         }
