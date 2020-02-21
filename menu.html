@@ -15,7 +15,7 @@
 
 <header>
     <nav class="menu">
-        <!--    <div class="filter valgt" data-retter="alle"></div>-->
+        <!--        <div class="filter" data-retter="alle"></div>-->
         <div class="filter" id="forret" data-retter="antipasti">
             <p>ANTIPASTI</p>
         </div>
@@ -38,7 +38,7 @@
 <style>
     body {
         background-image: url(imgs/marble.svg);
-        background-size: cover;
+        background-size: contain;
     }
 
     nav {
@@ -81,22 +81,22 @@
     }
 
     #forret p {
-        padding-top: 73px;
+        padding-top: 78px;
         font-size: 1.2rem;
     }
 
     #hovedret p {
-        padding-top: 73px;
+        padding-top: 78px;
         font-size: 1.2rem;
     }
 
     #dessert p {
-        padding-top: 73px;
+        padding-top: 78px;
         font-size: 1.2rem;
     }
 
     #drinks p {
-        padding-top: 73px;
+        padding-top: 78px;
         font-size: 1.2rem;
     }
 
@@ -121,6 +121,25 @@
         background-size: cover;
     }
 
+    .retter {
+        display: flex;
+
+    }
+
+
+    .kort {
+        font-family: "optima";
+
+    }
+
+    .lang {
+        font-family: "snell roundhand";
+    }
+
+    .pris {
+        font-family: "snell roundhand";
+    }
+
 
 
     h1 {
@@ -135,12 +154,11 @@
         font-size: 1.5rem;
         font-weight: 500;
     }
+
+    .hidden {
+        display: none;
+    }
 </style>
-
-
-
-
-
 
 
 
@@ -152,15 +170,19 @@
     <template>
         <article class="retter">
             <h2></h2>
-            <p class="pris"></p>
-            <p class="kort"></p>
-            <p class="lang"></p>
+            <div class="beskrivelse">
+                <p class="kort"></p>
+                <p class="lang"></p>
+            </div>
+            <div class="kroner">
+                <p class="pris"></p>
+            </div>
         </article>
     </template>
 
     <main></main>
 
-    <section id="detalje" class="skjul">
+    <section id="detalje" class="hidden">
         <button>X</button>
         <article id="mad">
             <h2></h2>
@@ -186,7 +208,6 @@
         document.addEventListener("DOMContentLoaded", hentData);
 
 
-
         async function hentData() {
             const response = await fetch(endpoint);
             console.log(response);
@@ -210,9 +231,9 @@
                 if (filter == "alle" || filter == ret.gsx$kategori.$t) {
                     const klon = retTemplate.cloneNode(true).content;
                     klon.querySelector(".kort").textContent += ret.gsx$kort.$t;
-                    klon.querySelector(".pris").textContent += ret.gsx$pris.$t + (" kr.");
+                    klon.querySelector(".pris").textContent += ret.gsx$pris.$t + (",-");
                     klon.querySelector(".lang").textContent += ret.gsx$lang.$t;
-                    klon.querySelector(".menu").addEventListener("click", () => {
+                    klon.querySelector(".retter").addEventListener("click", () => {
                         visDetaljer(ret);
                     });
 
