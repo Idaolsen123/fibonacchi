@@ -16,16 +16,16 @@
 <header>
     <nav class="menu">
         <!--        <div class="filter" data-retter="alle"></div>-->
-        <div class="filter" id="forret" data-retter="antipasti">
+        <div class="filter" id="forret" data-kategori="antipasti">
             <p>ANTIPASTI</p>
         </div>
-        <div class="filter" id="hovedret" data-retter="secondi">
+        <div class="filter" id="hovedret" data-kategori="secondi">
             <p>SECONDI</p>
         </div>
-        <div class="filter" id="dessert" data-retter="dolce">
+        <div class="filter" id="dessert" data-kategori="dolce">
             <p>DOLCE</p>
         </div>
-        <div class="filter" id="drinks" data-retter="bevande">
+        <div class="filter" id="drinks" data-kategori="bevande">
             <p>BEVANDE</p>
         </div>
     </nav>
@@ -210,14 +210,14 @@
 
         async function hentData() {
             const response = await fetch(endpoint);
-            console.log(response);
+            //console.log(response);
             retter = await response.json();
-            console.log(retter);
+            //console.log(retter);
             visRetter();
         }
 
 
-        console.log(retter);
+        //console.log(retter);
 
 
         function visRetter() {
@@ -226,7 +226,9 @@
             container.innerHTML = "";
 
             retter.feed.entry.forEach((ret) => {
-                console.log(ret);
+                //console.log(ret);
+
+                //når if henviser til en knap, bliver data hentet efter kategori
 
                 if (filter == "alle" || filter == ret.gsx$kategori.$t) {
                     const klon = retTemplate.cloneNode(true).content;
@@ -244,7 +246,7 @@
         }
 
         function visDetaljer(ret) {
-            console.log(ret, popUp, popUp.classList)
+            //console.log(ret, popUp, popUp.classList)
             popUp.classList.remove("hidden");
             popUp.querySelector("button").addEventListener("click", () => popUp.classList.add("hidden"));
             popUp.querySelector(".kort").textContent += ret.gsx$kort.$t;
@@ -261,8 +263,8 @@
         }
 
         function filtrering() {
-            console.log("FILTER");
-            filter = this.dataset.ret;
+            console.log("FILTER", this.dataset.kategori);
+            filter = this.dataset.kategori;
             visRetter();
         }
     </script>
