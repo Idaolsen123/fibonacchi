@@ -63,6 +63,7 @@
 
     #line {
         width: 100%;
+        padding-bottom: 2rem;
     }
 
 
@@ -121,26 +122,33 @@
         height: 20vh;
     }
 
+    .menu {
+        padding-bottom: 2rem;
+    }
+
     .kort {
         font-family: "optima";
         cursor: pointer;
+        font-size: 1.35rem;
 
     }
 
     .lang {
         font-family: "snell roundhand";
+        font-size: 1.2rem;
     }
 
     .pris {
         font-family: "snell roundhand";
         text-align: right;
+        font-size: 1.35rem;
     }
 
 
 
     h1 {
         font-family: 'optima';
-        font-size: 2rem;
+        font-size: 2.3rem;
         text-align: center;
         font-weight: 500;
     }
@@ -169,6 +177,83 @@
         width: 65vw;
         margin: auto;
     }
+
+    @media screen and (min-width:600px) {
+
+        nav {
+            text-align: center;
+            padding: 10px;
+            justify-content: center;
+            font-family: "optima";
+            color: white;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 7px;
+
+        }
+
+        #line {
+            width: 65%;
+            padding-left: 9.75rem;
+        }
+
+        #forret {
+            background-image: url(imgs/antipasti.svg);
+            background-size: cover;
+            display: grid;
+            grid-column: span 1;
+        }
+
+        #forret p {
+            padding-top: 71px;
+            font-size: 1.4rem;
+
+        }
+
+        #hovedret p {
+            padding-top: 71px;
+            font-size: 1.4rem;
+        }
+
+        #dessert p {
+            padding-top: 71px;
+            font-size: 1.4rem;
+        }
+
+        #drinks p {
+            padding-top: 71px;
+            font-size: 1.4rem;
+        }
+
+        #hovedret {
+            background-image: url(imgs/secondi.svg);
+            background-size: cover;
+            display: grid;
+            grid-column: span 1;
+        }
+
+        #dessert {
+            background-image: url(imgs/dolce.svg);
+            background-size: cover;
+            display: grid;
+            grid-column: span 1;
+        }
+
+        #drinks {
+            background-image: url(imgs/bevande.svg);
+            background-size: cover;
+            display: grid;
+            grid-column: span 1;
+        }
+
+        .menu div {
+            width: 15vw;
+            height: 27vh;
+        }
+
+
+    }
+
 </style>
 
 
@@ -276,5 +361,8 @@
             filter = this.dataset.kategori;
             visRetter();
         }
+
     </script>
-</body></html>
+</body>
+
+</html>
