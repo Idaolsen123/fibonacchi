@@ -39,6 +39,7 @@
     body {
         background-image: url(imgs/marble.svg);
         background-size: contain;
+
     }
 
     nav {
@@ -123,12 +124,12 @@
 
     .retter {
         display: flex;
-
     }
 
 
     .kort {
         font-family: "optima";
+        cursor: pointer;
 
     }
 
@@ -157,6 +158,21 @@
 
     .hidden {
         display: none;
+    }
+
+    #detalje {
+        position: fixed;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgb(255, 255, 255);
+        overflow: scroll;
+        font-family: 'optima';
+    }
+
+    #detalje p {
+        width: 65vw;
+        margin: auto;
     }
 </style>
 
@@ -232,9 +248,9 @@
 
                 if (filter == "alle" || filter == ret.gsx$kategori.$t) {
                     const klon = retTemplate.cloneNode(true).content;
-                    klon.querySelector(".kort").textContent += ret.gsx$kort.$t;
-                    klon.querySelector(".pris").textContent += ret.gsx$pris.$t + (",-");
-                    klon.querySelector(".lang").textContent += ret.gsx$lang.$t;
+                    klon.querySelector(".kort").textContent = ret.gsx$kort.$t;
+                    klon.querySelector(".pris").textContent = ret.gsx$pris.$t + (",-");
+                    klon.querySelector(".lang").textContent = ret.gsx$lang.$t;
                     klon.querySelector(".retter").addEventListener("click", () => {
                         visDetaljer(ret);
                     });
@@ -249,10 +265,8 @@
             //console.log(ret, popUp, popUp.classList)
             popUp.classList.remove("hidden");
             popUp.querySelector("button").addEventListener("click", () => popUp.classList.add("hidden"));
-            popUp.querySelector(".kort").textContent += ret.gsx$kort.$t;
+            popUp.querySelector(".kort").textContent = ret.gsx$kort.$t;
             popUp.querySelector(".allergener").textContent = ret.gsx$allergener.$t;
-
-
         }
 
 
