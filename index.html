@@ -61,17 +61,28 @@
 
     @media screen and (min-width:600px) {
         #splash .wrapper {
-            height: 100%;
+            /*height: 100%;*/
             display: grid;
-            grid-gap: 2px;
+            grid-gap: 5px;
             grid-template-columns: repeat(6, 1fr);
             /*            grid-template-rows: repeat(4, 1fr);*/
         }
+
+
+        #splash img {
+            width: 37vw;
+            height: 100vh;
+            border: none;
+
+        }
+
 
         .pic_1 {
             grid-column: 1 / 2;
             justify-self: stretch;
             /*            grid-row: 1/4;*/
+
+
         }
 
         .pic_2 {
@@ -79,12 +90,16 @@
             justify-self: center;
             /*            grid-row: 1/4;*/
 
+
+
         }
 
         .pic_3 {
             grid-column: 4 / 6;
             justify-self: stretch;
             /*            grid-row: 1/4;*/
+
+
         }
 
         .welcome_txt {
