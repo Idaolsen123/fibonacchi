@@ -113,6 +113,27 @@
             grid-column: 3/4;
         }
 
+        .booking {
+            padding-bottom: 2rem;
+            padding-left: 5rem;
+            padding-right: 5rem;
+
+            display: grid;
+            grid-gap: 10px;
+            grid-template-columns: repeat (3, 1fr);
+        }
+
+        .varer {
+            width: 50vw;
+            grid-column: 1/3;
+            padding-right: 2rem;
+        }
+
+        .reservation {
+
+            width: 40vw;
+            grid-column: 3/4;
+        }
     }
 </style>
 
@@ -175,14 +196,18 @@
     </div>
 
     <div class="booking">
-        <img src="imgs/varer.jpg" alt="food">
-        <h1>BOOKING</h1>
-        <p>Ved reservation ring:
-            +45 12 34 56 78
-            <br> <br>
-            OBS. Ved større selskaber, skal reservation forekomme minimum 72 timer før
-            <br> <br>
-            Ved afbud som foretages under 2 timer inden eller mindre, forbeholder vi os retten til at opkræve et beløb på 100,-</p>
+        <div class="varer">
+            <img src="imgs/varer.jpg" alt="food">
+        </div>
+        <div class="reservation">
+            <h1>BOOKING</h1>
+            <p>Ved reservation ring:
+                +45 12 34 56 78
+                <br> <br>
+                OBS. Ved større selskaber, skal reservation forekomme minimum 72 timer før
+                <br> <br>
+                Ved afbud som foretages under 2 timer inden eller mindre, forbeholder vi os retten til at opkræve et beløb på 100,-</p>
+        </div>
     </div>
 
     <footer>
