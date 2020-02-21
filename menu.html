@@ -8,29 +8,28 @@
 </head>
 
 <section id="bistro">
-    <p>MENU</p>
+    <h1>MENU</h1>
     <div>
         <img id="line" src="imgs/line.svg" alt="line"></div>
 </section>
 
-
-<nav class="menu">
-    <!--    <div class="filter valgt" data-retter="alle">Alle</div>-->
-    <div class="filter" id="forret" data-retter="antipasti">
-        <p>ANTIPASTI</p>
-    </div>
-    <div class="filter" id="hovedret" data-retter="secondi">
-        <p>SECONDI</p>
-    </div>
-    <div class="filter" id="dessert" data-retter="dolce">
-        <p>DOLCE</p>
-    </div>
-    <div class="filter" id="drinks" data-retter="bevande">
-        <p>BEVANDE</p>
-    </div>
-</nav>
-
-<p>ALLE RETTER</p>
+<header>
+    <nav class="menu">
+        <!--    <div class="filter valgt" data-retter="alle"></div>-->
+        <div class="filter" id="forret" data-retter="antipasti">
+            <p>ANTIPASTI</p>
+        </div>
+        <div class="filter" id="hovedret" data-retter="secondi">
+            <p>SECONDI</p>
+        </div>
+        <div class="filter" id="dessert" data-retter="dolce">
+            <p>DOLCE</p>
+        </div>
+        <div class="filter" id="drinks" data-retter="bevande">
+            <p>BEVANDE</p>
+        </div>
+    </nav>
+</header>
 
 <!--
 
@@ -124,10 +123,17 @@
 
 
 
-    p {
+    h1 {
         font-family: 'optima';
         font-size: 2rem;
         text-align: center;
+        font-weight: 500;
+    }
+
+    h2 {
+        font-family: 'optima';
+        font-size: 1.5rem;
+        font-weight: 500;
     }
 </style>
 
@@ -146,25 +152,19 @@
     <template>
         <article class="retter">
             <h2></h2>
-            <p class="id"></p>
-            <p class="kategori"></p>
             <p class="pris"></p>
             <p class="kort"></p>
             <p class="lang"></p>
-            <p class="allergener"></p>
         </article>
     </template>
 
+    <main></main>
 
     <section id="detalje" class="skjul">
         <button>X</button>
         <article id="mad">
             <h2></h2>
-            <p class="id"></p>
-            <p class="kategori"></p>
-            <p class="pris"></p>
             <p class="kort"></p>
-            <p class="lang"></p>
             <p class="allergener"></p>
         </article>
     </section>
@@ -176,10 +176,73 @@
 
 
 
-
     <script>
+        const endpoint = "http://spreadsheets.google.com/feeds/list/1nAxuWNTwRgYLt9MzjyuwMsVFytLB2IQNq4w0k79HzO8/od6/public/values?alt=json";
+
+        let retter = [];
+        let filter = "alle";
+        const popUp = document.querySelector("#detalje");
+
+        document.addEventListener("DOMContentLoaded", hentData);
 
 
 
+        async function hentData() {
+            const response = await fetch(endpoint);
+            console.log(response);
+            retter = await response.json();
+            console.log(retter);
+            visRetter();
+        }
+
+
+        console.log(retter);
+
+
+        function visRetter() {
+            const container = document.querySelector("main");
+            const retTemplate = document.querySelector("template");
+            container.innerHTML = "";
+
+            retter.feed.entry.forEach((ret) => {
+                console.log(ret);
+
+                if (filter == "alle" || filter == ret.gsx$kategori.$t) {
+                    const klon = retTemplate.cloneNode(true).content;
+                    klon.querySelector(".kort").textContent += ret.gsx$kort.$t;
+                    klon.querySelector(".pris").textContent += ret.gsx$pris.$t + (" kr.");
+                    klon.querySelector(".lang").textContent += ret.gsx$lang.$t;
+                    klon.querySelector(".menu").addEventListener("click", () => {
+                        visDetaljer(ret);
+                    });
+
+                    container.appendChild(klon);
+                }
+            })
+            addEventListenersToButtons();
+        }
+
+        function visDetaljer(ret) {
+            console.log(ret, popUp, popUp.classList)
+            popUp.classList.remove("hidden");
+            popUp.querySelector("button").addEventListener("click", () => popUp.classList.add("hidden"));
+            popUp.querySelector(".kort").textContent += ret.gsx$kort.$t;
+            popUp.querySelector(".allergener").textContent = ret.gsx$allergener.$t;
+
+
+        }
+
+
+        function addEventListenersToButtons() {
+            document.querySelectorAll(".filter").forEach(elm => {
+                elm.addEventListener("click", filtrering);
+            })
+        }
+
+        function filtrering() {
+            console.log("FILTER");
+            filter = this.dataset.ret;
+            visRetter();
+        }
     </script>
 </body></html>
