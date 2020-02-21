@@ -39,91 +39,86 @@
     body {
         background-image: url(imgs/marble.svg);
         background-size: contain;
+        width: 65vw;
+        margin: auto;
+        display: grid;
+        grid-template-rows: auto;
     }
 
     nav {
         text-align: center;
         padding: 10px;
-        display: flex;
         justify-content: center;
         font-family: "optima";
         color: white;
-    }
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 7px;
 
-
-    nav valgt {
-        background-color: red;
-    }
-
-    .filter {
-        margin: 17px;
     }
 
     .filter:hover {
         filter: grayscale(1);
     }
 
-    #bistro div {
-        display: flex;
-        justify-content: center;
+    #line {
+        width: 100%;
     }
 
-    #line {
-        width: 50%;
-        padding-bottom: 17px;
-    }
+
 
     #forret {
-        background-image: url(imgs/antipasti.svg);
-        width: 15vw;
-        height: 27vh;
+        background-image: url(imgs/antipasti_m.svg);
         background-size: cover;
+        display: grid;
+        grid-column: span 1;
     }
 
     #forret p {
-        padding-top: 78px;
-        font-size: 1.2rem;
+        padding-top: 55px;
+        font-size: 0.9rem;
+
     }
 
     #hovedret p {
-        padding-top: 78px;
-        font-size: 1.2rem;
+        padding-top: 55px;
+        font-size: 0.9rem;
     }
 
     #dessert p {
-        padding-top: 78px;
-        font-size: 1.2rem;
+        padding-top: 55px;
+        font-size: 0.9rem;
     }
 
     #drinks p {
-        padding-top: 78px;
-        font-size: 1.2rem;
+        padding-top: 55px;
+        font-size: 0.9rem;
     }
 
     #hovedret {
-        background-image: url(imgs/secondi.svg);
-        width: 15vw;
-        height: 27vh;
+        background-image: url(imgs/secondi_m.svg);
         background-size: cover;
+        display: grid;
+        grid-column: span 1;
     }
 
     #dessert {
-        background-image: url(imgs/dolce.svg);
-        width: 15vw;
-        height: 27vh;
+        background-image: url(imgs/dolce_m.svg);
         background-size: cover;
+        display: grid;
+        grid-column: span 1;
     }
 
     #drinks {
-        background-image: url(imgs/bevande.svg);
-        width: 15vw;
-        height: 27vh;
+        background-image: url(imgs/bevande_m.svg);
         background-size: cover;
+        display: grid;
+        grid-column: span 1;
     }
 
-    .retter {
-        display: flex;
-
+    .menu div {
+        width: 30vw;
+        height: 20vh;
     }
 
 
@@ -138,6 +133,7 @@
 
     .pris {
         font-family: "snell roundhand";
+        text-align: right;
     }
 
 
