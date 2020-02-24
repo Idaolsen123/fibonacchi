@@ -88,7 +88,7 @@
 
     /*SPLASH BILLEDE KUN 1 BILLEDE*/
 
-    .pic_1 {
+    .pic_2 {
         display: none;
     }
 
@@ -121,6 +121,30 @@
         display: grid;
     }
 
+    /*Vin billede væk i mobil*/
+
+    .wine_pic {
+        display: none;
+    }
+
+/*
+    .varer {
+    padding-left: 4.5rem;
+    padding-bottom: 1rem;
+    padding-top: 1.5rem;
+    padding-right: 3rem;
+    padding-left: 3rem;
+
+    }
+*/
+
+    /*
+    .varer img {
+    width: 67.5vw;
+    height: 55vh;
+    }
+*/
+
     @media screen and (min-width:600px) {
         #splash .wrapper {
             /*height: 100%;*/
@@ -151,6 +175,7 @@
         }
 
         .pic_2 {
+            display: block;
             grid-column: 2 / 4;
             justify-self: center;
             /*            grid-row: 1/4;*/
@@ -194,6 +219,8 @@
         }
 
         .wine_pic {
+            display: block;
+
             width: 33.3vw;
             grid-column: 4/5;
         }
@@ -305,13 +332,14 @@
             <div class="varer">
                 <img src="imgs/varer.jpeg" alt="food">
             </div>
+
             <div class="reservation">
                 <h1>BOOKING</h1>
                 <p>Ved reservation ring:
                     +45 12 34 56 78
-                    <br> <br>
-                    OBS. Ved større selskaber skal reservation forekomme minimum 72 timer før
-                    <br> <br>
+                    <br>
+                    <br>
+                    OBS. Ved større selskaber skal reservation forekomme minimum 72 timer før.
                     Ved afbud 2 timer eller mindre inden reservation, forbeholder vi os retten til at opkræve et beløb på 100,-</p>
             </div>
         </div>
@@ -325,9 +353,9 @@
         <p>
             ADRESSE
             <br>
-            Lorem Ipsum 12
+            Grønnegade 12
             <br>
-            1100 København K</p>
+            1107 København K</p>
     </footer>
     <script></script>
 </body></html>
