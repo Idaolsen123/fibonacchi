@@ -76,6 +76,7 @@
         background-size: cover;
         background-repeat: no-repeat;
         background-attachment: fixed;
+        margin-top: 0;
 
     }
 
@@ -103,23 +104,15 @@
     }
 
     .knapper {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        display: flex;
+        position: fixed;
     }
 
-    .menu_knap img {
-        width: 67vw;
-        height: 5vh;
-        position: fixed;
-        display: grid;
+
+    .menu_knap a {
+        margin: 0;
     }
 
-    .tlf_knap img {
-        width: 67vw;
-        height: 5vh;
-        position: fixed;
-        display: grid;
-    }
 
     /*Vin billede væk i mobil*/
 
@@ -260,18 +253,10 @@
             grid-column: 3/4;
         }
 
-        .menu_knap img {
-            width: 10vw;
-            height: 5vh;
+        .knapper {
+            display: flex;
             position: fixed;
         }
-
-        .tlf_knap img {
-            width: 10vw;
-            height: 5vh;
-            position: fixed;
-        }
-    }
 </style>
 
 <body>
