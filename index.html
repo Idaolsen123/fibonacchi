@@ -95,6 +95,12 @@
         justify-content: center;
     }
 
+    /*Vin billede væk i mobil*/
+
+    .wine_pic {
+        display: none;
+    }
+
     @media screen and (min-width:600px) {
         #splash .wrapper {
             /*height: 100%;*/
@@ -168,6 +174,8 @@
         }
 
         .wine_pic {
+            display: block;
+
             width: 33.3vw;
             grid-column: 4/5;
         }
