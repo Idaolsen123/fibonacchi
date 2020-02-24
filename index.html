@@ -79,6 +79,13 @@
 
     }
 
+    .content img {
+        width: 85vw;
+        margin: auto;
+        display: grid;
+        grid-template-rows: auto;
+    }
+
     /*SPLASH BILLEDE KUN 1 BILLEDE*/
 
     .pic_1 {
@@ -93,6 +100,25 @@
         background-color: #D9D0C1;
         display: flex;
         justify-content: center;
+    }
+
+    .knapper {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .menu_knap img {
+        width: 67vw;
+        height: 5vh;
+        position: fixed;
+        display: grid;
+    }
+
+    .tlf_knap img {
+        width: 67vw;
+        height: 5vh;
+        position: fixed;
+        display: grid;
     }
 
     @media screen and (min-width:600px) {
@@ -207,12 +233,22 @@
             height: 5vh;
             position: fixed;
         }
+
+        .tlf_knap img {
+            width: 10vw;
+            height: 5vh;
+            position: fixed;
+        }
     }
 </style>
 
 <body>
-    <div class="menu_knap">
-        <a href="menu.html"><img src="imgs/menu_knap.png" alt="menu"></a>
+    <div class="knapper">
+        <div class="tlf_knap">
+            <img src="imgs/tlf_knap.svg" alt="tlf"></div>
+        <div class="menu_knap">
+            <a href="menu.html"><img src="imgs/menu_knap.svg" alt="menu"></a>
+        </div>
     </div>
     <section id="splash">
 
@@ -233,52 +269,53 @@
         </div>
     </section>
 
-    <section id="text">
-        <div class="welcome_txt">
-            <h1>CUCINA <br>
-                FIBONACCI <br>
-                ITALIANA </h1>
-            <p>Siden 1960 har Cucina Fibonacci eksisteret som familierestaurant i den italienske by Mirano i provinsen Venedig. <br> I 1989 kom hele familien til Danmark, og driver nu deres passion i hjertet af København.
-                <br>Den ægte italienske stemning er til at føle og er besøget værd, hvis du er tilhænger af traditionel italiensk mad.</p>
-            <br>
-            <a href="menu.html"> SE VORES MENU</a>
+    <div class="content">
+        <section id="text">
+            <div class="welcome_txt">
+                <h1>CUCINA <br>
+                    FIBONACCI <br>
+                    ITALIANA </h1>
+                <p>Siden 1960 har Cucina Fibonacci eksisteret som familierestaurant i den italienske by Mirano i provinsen Venedig. <br> I 1989 kom hele familien til Danmark, og driver nu deres passion i hjertet af København.
+                    <br>Den ægte italienske stemning er til at føle og er besøget værd, hvis du er tilhænger af traditionel italiensk mad.</p>
+                <br>
+                <a href="menu.html"> SE VORES MENU</a>
 
-        </div>
-    </section>
-
-    <section class="pictures">
-        <div class="wrapper_2">
-            <div class="lady_pic">
-                <img src="imgs/lady_pizza.png" alt="lady">
             </div>
-            <div class="wine_pic">
-                <img src="imgs/wine.png" alt="wine">
+        </section>
+
+        <section class="pictures">
+            <div class="wrapper_2">
+                <div class="lady_pic">
+                    <img src="imgs/lady_pizza.png" alt="lady">
+                </div>
+                <div class="wine_pic">
+                    <img src="imgs/wine.png" alt="wine">
+                </div>
+            </div>
+        </section>
+
+        <div class="description">
+            <h1>CIBO TRADIZIONALE ITALIANO</h1>
+            <p>Cucina Fibonacci Italiana serverer autentisk traditionel italiensk mad. Det er en familieejet restaurant med personale der snakker italiensk, dansk og engelsk. Hele konceptet er bygget op om gamle traditioner og der er taget familieopskrifter med helt fra Italien. Retterne er lavet af de bedste råvarer, og restauranten dyrker selv deres krydderurter.
+                Cucina Fibonnaci er en del af Grønne Tage Købenahvn og kan besøges i perioden maj - september, mandag og onsdag til smagen af Italien, hvor Mama Fibonacci fra restauranten byder på smagsprøver og kolde drikkevarer.</p>
+            <br><br><a href="https://www.visitcopenhagen.dk/kobenhavn/planlaeg-din-tur/rigsarkivets-gronne-tage-gdk653008">Køb din billet her.</a>
+        </div>
+
+        <div class="booking">
+            <div class="varer">
+                <img src="imgs/varer.jpeg" alt="food">
+            </div>
+            <div class="reservation">
+                <h1>BOOKING</h1>
+                <p>Ved reservation ring:
+                    +45 12 34 56 78
+                    <br> <br>
+                    OBS. Ved større selskaber skal reservation forekomme minimum 72 timer før
+                    <br> <br>
+                    Ved afbud 2 timer eller mindre inden reservation, forbeholder vi os retten til at opkræve et beløb på 100,-</p>
             </div>
         </div>
-    </section>
-
-    <div class="description">
-        <h1>CIBO TRADIZIONALE ITALIANO</h1>
-        <p>Cucina Fibonacci Italiana serverer autentisk traditionel italiensk mad. Det er en familieejet restaurant med personale der snakker italiensk, dansk og engelsk. Hele konceptet er bygget op om gamle traditioner og der er taget familieopskrifter med helt fra Italien. Retterne er lavet af de bedste råvarer, og restauranten dyrker selv deres krydderurter.
-            Cucina Fibonnaci er en del af Grønne Tage Købenahvn og kan besøges i perioden maj - september, mandag og onsdag til smagen af Italien, hvor Mama Fibonacci fra restauranten byder på smagsprøver og kolde drikkevarer.</p>
-        <br><br><a href="https://www.visitcopenhagen.dk/kobenhavn/planlaeg-din-tur/rigsarkivets-gronne-tage-gdk653008">Køb din billet her.</a>
     </div>
-
-    <div class="booking">
-        <div class="varer">
-            <img src="imgs/varer.jpg" alt="food">
-        </div>
-        <div class="reservation">
-            <h1>BOOKING</h1>
-            <p>Ved reservation ring:
-                +45 12 34 56 78
-                <br> <br>
-                OBS. Ved større selskaber skal reservation forekomme minimum 72 timer før
-                <br> <br>
-                Ved afbud 2 timer eller mindre inden reservation, forbeholder vi os retten til at opkræve et beløb på 100,-</p>
-        </div>
-    </div>
-
     <footer>
         <p>ÅBNINGSTIDER
             <br>
