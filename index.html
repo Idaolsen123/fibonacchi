@@ -113,6 +113,7 @@
     .knapper {
         display: flex;
         position: fixed;
+        z-index: 2;
         height: 15vh;
         width: 100%;
         justify-content: flex-end;
@@ -164,6 +165,7 @@
     height: 55vh;
     }
 */
+
 
     @media screen and (min-width:600px) {
         #splash .wrapper {
@@ -333,6 +335,97 @@
         .menu_knap {
             width: 12vw;
         }
+
+
+        /*    ANIMATIONER TIL SPLASH */
+
+        .fade_out1 {
+            animation-name: fade_out_kf1;
+            animation-delay: 1s;
+            animation-duration: 37s;
+            animation-iteration-count: infinite;
+            animation-fill-mode: none;
+            animation-timing-function: linear;
+        }
+
+        @keyframes fade_out_kf1 {
+            0% {
+                opacity: 1;
+            }
+
+            15% {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 0;
+            }
+
+            70% {
+                opacity: 1;
+            }
+
+
+        }
+
+        .fade_out2 {
+            animation-name: fade_out_kf2;
+            animation-delay: 8s;
+            animation-duration: 37s;
+            animation-iteration-count: infinite;
+            animation-fill-mode: none;
+            animation-timing-function: linear;
+        }
+
+        @keyframes fade_out_kf2 {
+            0% {
+                opacity: 1;
+            }
+
+            15% {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 0;
+            }
+
+            70% {
+                opacity: 1;
+            }
+
+
+        }
+
+        .fade_out3 {
+            animation-name: fade_out_kf3;
+            animation-delay: 12s;
+            animation-duration: 37s;
+            animation-iteration-count: infinite;
+            animation-fill-mode: none;
+            animation-timing-function: linear;
+        }
+
+        @keyframes fade_out_kf3 {
+            0% {
+                opacity: 1;
+            }
+
+            15% {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 0;
+            }
+
+            70% {
+                opacity: 1;
+            }
+
+
+        }
+
 </style>
 
 
@@ -356,32 +449,33 @@
 
     <section id="splash">
         <div class="wrapper">
-            <div class="pic_1"><img src="imgs/scooter.png" alt="scooter">
+            <div class="pic_1"><img class="fade_out2" src="imgs/scooter.svg" alt="scooter">
             </div>
 
             <div class="pic_2">
-                <img src="imgs/paper.jpg" alt="paper">
+                <img class="fade_out1" src="imgs/paper.svg" alt="paper">
             </div>
 
             <div class="pic_3">
-                <img src="imgs/pizza_2.png" alt="pizza_2">
-            </div>
-        </div>
+                <img class="fade_out3" src="imgs/pizza.svg" alt="pizza">
 
-        <div class="wrapper_ani">
-
-            <div class="pic_4">
-                <img src="imgs/outdoor.jpg" alt="outdoor">
             </div>
 
-            <div class="pic_5">
-                <img src="imgs/venice.jpg" alt="venice">
-            </div>
+            <div class="wrapper_ani">
 
-            <div class="pic_6">
-                <img src="imgs/white_scooter.jpg" alt="scooter">
-            </div>
+                <div class="pic_4">
+                    <img src="imgs/outdoor.svg" alt="outdoor">
+                </div>
 
+                <div class="pic_5">
+                    <img src="imgs/venice.svg" alt="venice">
+                </div>
+
+                <div class="pic_6">
+                    <img src="imgs/white_scooter.svg" alt="scooter">
+                </div>
+
+            </div>
         </div>
     </section>
 
@@ -463,4 +557,6 @@
             1107 København K</p>
     </footer>
     <script></script>
-</body></html>
+</body>
+
+</html>
