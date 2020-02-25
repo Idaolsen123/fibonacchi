@@ -30,12 +30,20 @@
         background-size: cover;
         background-repeat: no-repeat;
         background-attachment: fixed;
+        /*
+        width: 65vw;
+        margin: auto;
+        display: grid;
+        grid-template-rows: auto;
+*/
+    }
+
+    .content_menu {
         width: 65vw;
         margin: auto;
         display: grid;
         grid-template-rows: auto;
     }
-
 
     nav {
         text-align: center;
@@ -271,7 +279,6 @@
 
 
     }
-
 </style>
 
 
@@ -281,70 +288,70 @@
     </div>
 </div>
 
-<section id="bistro">
-    <h1>MENU</h1>
-    <div>
-        <img id="line" src="imgs/line.svg" alt="line"></div>
-</section>
+<div class="content_menu">
 
-<header>
-    <nav class="menu">
-        <!--        <div class="filter" data-retter="alle"></div>-->
-        <div class="filter" id="forret" data-kategori="antipasti">
-            <p>ANTIPASTI</p>
-        </div>
-        <div class="filter" id="hovedret" data-kategori="secondi">
-            <p>SECONDI</p>
-        </div>
-        <div class="filter" id="dessert" data-kategori="dolce">
-            <p>DOLCE</p>
-        </div>
-        <div class="filter" id="drinks" data-kategori="bevande">
-            <p>BEVANDE</p>
-        </div>
-    </nav>
+    <section id="bistro">
+        <h1>MENU</h1>
+        <div>
+            <img id="line" src="imgs/line.svg" alt="line"></div>
+    </section>
 
-
-
-
-</header>
+    <header>
+        <nav class="menu">
+            <!--        <div class="filter" data-retter="alle"></div>-->
+            <div class="filter" id="forret" data-kategori="antipasti">
+                <p>ANTIPASTI</p>
+            </div>
+            <div class="filter" id="hovedret" data-kategori="secondi">
+                <p>SECONDI</p>
+            </div>
+            <div class="filter" id="dessert" data-kategori="dolce">
+                <p>DOLCE</p>
+            </div>
+            <div class="filter" id="drinks" data-kategori="bevande">
+                <p>BEVANDE</p>
+            </div>
+        </nav>
 
 
 
+
+    </header>
+
+
+</div>
 
 <body>
 
+    <div class="content_menu">
+        <template>
+            <article class="retter">
+                <h2></h2>
+                <div class="beskrivelse">
+                    <p class="kort"></p>
+                    <p class="lang"></p>
+                </div>
+                <div class="kroner">
+                    <p class="pris"></p>
+                </div>
+            </article>
+        </template>
 
-    <template>
-        <article class="retter">
-            <h2></h2>
-            <div class="beskrivelse">
+        <main></main>
+
+        <section id="detalje" class="hidden">
+            <button>X</button>
+            <article id="mad">
+                <h2></h2>
                 <p class="kort"></p>
-                <p class="lang"></p>
-            </div>
-            <div class="kroner">
-                <p class="pris"></p>
-            </div>
-        </article>
-    </template>
+                <p class="allergener"></p>
+            </article>
+        </section>
 
-    <main></main>
-
-    <section id="detalje" class="hidden">
-        <button>X</button>
-        <article id="mad">
-            <h2></h2>
-            <p class="kort"></p>
-            <p class="allergener"></p>
-        </article>
-    </section>
-
-    <main></main>
+        <main></main>
 
 
-
-
-
+    </div>
 
     <script>
         const endpoint = "http://spreadsheets.google.com/feeds/list/1nAxuWNTwRgYLt9MzjyuwMsVFytLB2IQNq4w0k79HzO8/od6/public/values?alt=json";
@@ -413,8 +420,5 @@
             filter = this.dataset.kategori;
             visRetter();
         }
-
     </script>
-</body>
-
-</html>
+</body></html>
