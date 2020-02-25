@@ -208,11 +208,87 @@
         width: 25vw;
     }
 
-
-
-
-
+    /*TABLET*/
     @media screen and (min-width:600px) {
+        nav {
+            text-align: center;
+            padding: 10px;
+            justify-content: center;
+            font-family: "optima";
+            color: white;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 7px;
+
+        }
+
+        #line {
+            width: 100%;
+        }
+
+        #forret {
+            background-image: url(imgs/antipasti.svg);
+            background-size: cover;
+            display: grid;
+            grid-column: span 1;
+        }
+
+        #forret p {
+            padding-top: 77px;
+            font-size: 1.3rem;
+
+        }
+
+        #hovedret p {
+            padding-top: 77px;
+            font-size: 1.3rem;
+        }
+
+        #dessert p {
+            padding-top: 77px;
+            font-size: 1.3rem;
+        }
+
+        #drinks p {
+            padding-top: 77px;
+            font-size: 1.3rem;
+        }
+
+        #hovedret {
+            background-image: url(imgs/secondi.svg);
+            background-size: cover;
+            display: grid;
+            grid-column: span 1;
+        }
+
+        #dessert {
+            background-image: url(imgs/dolce.svg);
+            background-size: cover;
+            display: grid;
+            grid-column: span 1;
+        }
+
+        #drinks {
+            background-image: url(imgs/bevande.svg);
+            background-size: cover;
+            display: grid;
+            grid-column: span 1;
+        }
+
+        .menu div {
+            width: 17vw;
+            height: 20Zvh;
+
+        }
+
+        .tilbage_knap img {
+            width: 17vw;
+        }
+    }
+
+    /*    WEB */
+
+    @media screen and (min-width:800px) {
 
         nav {
             text-align: center;
@@ -228,7 +304,7 @@
 
         #line {
             width: 65%;
-            padding-left: 9.75rem;
+            padding-left: 9.85rem;
         }
 
         #forret {
@@ -287,12 +363,11 @@
         }
 
         .tilbage_knap img {
-            width: 12vw;
+            width: 9.5vw;
         }
 
 
     }
-
 </style>
 
 
@@ -434,8 +509,5 @@
             filter = this.dataset.kategori;
             visRetter();
         }
-
     </script>
-</body>
-
-</html>
+</body></html>

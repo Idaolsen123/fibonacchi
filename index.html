@@ -27,6 +27,10 @@
         box-sizing: border-box;
     }
 
+    html {
+        scroll-behavior: smooth;
+    }
+
     img {
         width: 100%;
     }
@@ -71,6 +75,10 @@
         color: #3D3D3D;
     }
 
+    footer p {
+        font-size: 0.9rem;
+    }
+
     body {
         background-image: url(imgs/marble.svg);
         background-size: cover;
@@ -81,7 +89,7 @@
     }
 
 
-    .content img {
+    #content img {
         width: 85vw;
         margin: auto;
         display: grid;
@@ -267,7 +275,7 @@
             /*            grid-row: 1/4;*/
         }
 
-        .content img {
+        #content img {
             width: 100%;
         }
 
@@ -288,7 +296,7 @@
 
         .wrapper_2 {
             display: grid;
-            grid-gap: 2px;
+            /*            grid-gap: 2px;*/
             grid-template-columns: repeat(4, 1fr);
         }
 
@@ -475,6 +483,10 @@
         /*    MEDIA QUERY TIL WEB    */
         @media screen and (min-width:800px) {
 
+            p {
+                font-size: 1.1rem;
+            }
+
 
             #splash .wrapper {
                 /*height: 100%;*/
@@ -554,7 +566,7 @@
                 /*            grid-row: 1/4;*/
             }
 
-            .content img {
+            #content img {
                 width: 100%;
             }
 
@@ -575,7 +587,7 @@
 
             .wrapper_2 {
                 display: grid;
-                grid-gap: 2px;
+                /*                grid-gap: 2px;*/
                 grid-template-columns: repeat(4, 1fr);
             }
 
@@ -587,6 +599,7 @@
             .lady_pic img {
                 height: 95vh;
                 object-fit: contain;
+
 
             }
 
@@ -600,7 +613,6 @@
             .wine_pic img {
                 height: 95vh;
                 object-fit: contain;
-
             }
 
             .booking {
@@ -654,8 +666,7 @@
 
             .fade_out1 {
                 animation-name: fade_out_kf1;
-                animation-delay: 1s;
-                animation-duration: 30s;
+                animation-duration: 20s;
                 animation-iteration-count: infinite;
                 animation-fill-mode: none;
                 animation-timing-function: linear;
@@ -666,7 +677,7 @@
                     opacity: 1;
                 }
 
-                15% {
+                11% {
                     opacity: 0;
                 }
 
@@ -674,7 +685,7 @@
                     opacity: 0;
                 }
 
-                70% {
+                60% {
                     opacity: 1;
                 }
 
@@ -683,8 +694,8 @@
 
             .fade_out2 {
                 animation-name: fade_out_kf2;
-                animation-delay: 7s;
-                animation-duration: 30s;
+                animation-delay: 4s;
+                animation-duration: 20s;
                 animation-iteration-count: infinite;
                 animation-fill-mode: none;
                 animation-timing-function: linear;
@@ -695,7 +706,7 @@
                     opacity: 1;
                 }
 
-                15% {
+                11% {
                     opacity: 0;
                 }
 
@@ -703,7 +714,7 @@
                     opacity: 0;
                 }
 
-                70% {
+                60% {
                     opacity: 1;
                 }
 
@@ -712,8 +723,8 @@
 
             .fade_out3 {
                 animation-name: fade_out_kf3;
-                animation-delay: 11s;
-                animation-duration: 30s;
+                animation-delay: 8s;
+                animation-duration: 20s;
                 animation-iteration-count: infinite;
                 animation-fill-mode: none;
                 animation-timing-function: linear;
@@ -724,7 +735,7 @@
                     opacity: 1;
                 }
 
-                15% {
+                11% {
                     opacity: 0;
                 }
 
@@ -732,7 +743,7 @@
                     opacity: 0;
                 }
 
-                70% {
+                60% {
                     opacity: 1;
                 }
 
@@ -748,7 +759,7 @@
             }
 
             .logo img {
-                height: 150px;
+                height: 170px;
             }
 
             .udforsk {
@@ -763,6 +774,13 @@
                 height: 125px;
                 object-fit: contain;
             }
+
+            .udforsk a {
+                margin: 0;
+            }
+
+        }
+
 </style>
 
 
@@ -789,21 +807,21 @@
         </div>
 
         <div class="udforsk">
-            <img src="imgs/udforsk.svg" alt="udforsk">
+            <a href="#content"><img src="imgs/udforsk.svg" alt="udforsk"></a>
         </div>
 
         <div class="wrapper">
 
-            <div class="pic_1"><img class="fade_out2" src="imgs/scooter.svg" alt="scooter">
+            <div class="pic_1"><img class="fade_out1" src="imgs/scooter.svg" alt="scooter">
 
             </div>
 
             <div class="pic_2">
-                <img class="fade_out1" src="imgs/paper.svg" alt="paper">
+                <img class="fade_out3" src="imgs/paper.svg" alt="paper">
             </div>
 
             <div class="pic_3">
-                <img class="fade_out3" src="imgs/pizza.svg" alt="pizza">
+                <img class="fade_out2" src="imgs/pizza.svg" alt="pizza">
 
             </div>
 
@@ -828,7 +846,7 @@
 
 
 
-    <div class="content">
+    <div id="content">
         <section id="text">
             <div class="welcome_txt">
                 <h1>CUCINA <br>
@@ -903,4 +921,6 @@
             1107 København K</p>
     </footer>
     <script></script>
-</body></html>
+</body>
+
+</html>
