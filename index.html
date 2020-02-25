@@ -87,7 +87,7 @@
         grid-template-rows: auto;
     }
 
-    /*SPLASH BILLEDE KUN 1 BILLEDE*/
+    /******SPLASH BILLEDE KUN 1 BILLEDE*******/
 
     .pic_2 {
         display: none;
@@ -95,6 +95,13 @@
 
     .pic_3 {
         display: none;
+    }
+
+    .pic_4,
+    .pic_5,
+    .pic_6 {
+        display: none;
+
     }
 
     footer {
@@ -114,7 +121,7 @@
     }
 
 
-    /*Vin billede væk i mobil*/
+    /***********Vin billede væk i mobil***********/
 
     .wine_pic {
         display: none;
@@ -158,7 +165,6 @@
         .pic_1 img {
             width: 33.3vw;
             object-fit: contain;
-
         }
 
         .pic_1 {
@@ -166,8 +172,6 @@
             grid-column: 1 / 2;
             justify-self: stretch;
             /*            grid-row: 1/4;*/
-
-
         }
 
         .pic_2 {
@@ -175,9 +179,6 @@
             grid-column: 2 / 4;
             justify-self: center;
             /*            grid-row: 1/4;*/
-
-
-
         }
 
         .pic_3 {
@@ -185,8 +186,42 @@
             grid-column: 4 / 6;
             justify-self: stretch;
             /*            grid-row: 1/4;*/
+        }
 
+        #splash .wrapper_ani {
+            /*height: 100%;*/
+            display: grid;
+            grid-gap: 5px;
+            grid-template-columns: repeat(5, 1fr);
+            position: absolute;
+            top: 0;
+            z-index: -1;
+            /*            grid-template-rows: repeat(4, 1fr);*/
+        }
 
+        .pic_4 img {
+            width: 33.3vw;
+            object-fit: contain;
+        }
+
+        .pic_4 {
+            display: block;
+            grid-column: 1 / 2;
+            justify-self: stretch;
+        }
+
+        .pic_5 {
+            display: block;
+            grid-column: 2 / 4;
+            justify-self: center;
+            /*            grid-row: 1/4;*/
+        }
+
+        .pic_6 {
+            display: block;
+            grid-column: 4 / 6;
+            justify-self: stretch;
+            /*            grid-row: 1/4;*/
         }
 
         .content img {
@@ -259,7 +294,15 @@
             display: flex;
             position: fixed;
         }
+
 </style>
+
+
+
+
+
+
+
 
 <body>
     <div class="knapper">
@@ -282,7 +325,21 @@
 
             <div class="pic_3">
                 <img src="imgs/pizza_2.png" alt="pizza_2">
+            </div>
+        </div>
 
+        <div class="wrapper_ani">
+
+            <div class="pic_4">
+                <img src="imgs/outdoor.jpg" alt="outdoor">
+            </div>
+
+            <div class="pic_5">
+                <img src="imgs/venice.jpg" alt="venice">
+            </div>
+
+            <div class="pic_6">
+                <img src="imgs/white_scooter.jpg" alt="scooter">
             </div>
 
         </div>
@@ -350,4 +407,6 @@
             1107 København K</p>
     </footer>
     <script></script>
-</body></html>
+</body>
+
+</html>
