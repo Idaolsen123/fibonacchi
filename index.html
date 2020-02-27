@@ -96,7 +96,7 @@
         grid-template-rows: auto;
     }
 
-    /******SPLASH BILLEDE KUN 1 BILLEDE*******/
+    /******SPLASH BILLEDE - KUN 1 BILLEDE NÅR MOBIL*******/
 
     .pic_2 {
         display: none;
@@ -113,12 +113,7 @@
 
     }
 
-    footer {
-        background-color: #D9D0C1;
-        display: flex;
-        justify-content: center;
-    }
-
+    /*KNAPPER FIXED POSITION, SÅ DE FØLGER MED PÅ SIDEN SAMT Z-INDEX SÅ DE LIGGER SIG FORREST*/
     .knapper {
         display: flex;
         position: fixed;
@@ -133,15 +128,14 @@
         width: 25vw;
     }
 
+    /**/
 
     .menu_knap {
         width: 25vw;
     }
 
 
-
-
-    /****effekt der gør at der ikke kommer margin - ellers ville der automatisk være 10px mrgin i toppen****/
+    /****Effekt der gør at der ikke kommer margin - ellers ville der automatisk være 10px margin i toppen****/
     .menu_knap a {
         margin: 0;
     }
@@ -155,6 +149,12 @@
 
     .reservation {
         margin: 1.5rem;
+    }
+
+    footer {
+        background-color: #D9D0C1;
+        display: flex;
+        justify-content: center;
     }
 
     /*
@@ -782,6 +782,7 @@
             }
 
         }
+
 </style>
 
 
@@ -922,4 +923,6 @@
             1107 København K</p>
     </footer>
     <script></script>
-</body></html>
+</body>
+
+</html>
