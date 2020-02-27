@@ -462,15 +462,17 @@
     </div>
 
     <script>
+        //Defineret json link til vores sheet med informationer om retter
         const endpoint = "http://spreadsheets.google.com/feeds/list/1nAxuWNTwRgYLt9MzjyuwMsVFytLB2IQNq4w0k79HzO8/od6/public/values?alt=json";
 
+        //Definér variabler
         let retter = [];
         let filter = "alle";
         const popUp = document.querySelector("#detalje");
 
         document.addEventListener("DOMContentLoaded", hentData);
 
-
+        //Henter data fra sheet
         async function hentData() {
             const response = await fetch(endpoint);
             //console.log(response);
@@ -482,7 +484,6 @@
 
         //console.log(retter);
 
-
         function visRetter() {
             const container = document.querySelector("main");
             const retTemplate = document.querySelector("template");
@@ -492,7 +493,8 @@
                 //console.log(ret);
 
                 //når if henviser til en knap, bliver data hentet efter kategori
-
+                //Viser alle retter
+                //Viser kun de valgte beskrivelser fra HTML
                 if (filter == "alle" || filter == ret.gsx$kategori.$t) {
                     const klon = retTemplate.cloneNode(true).content;
                     klon.querySelector(".kort").textContent = ret.gsx$kort.$t;
@@ -510,8 +512,8 @@
 
         function visDetaljer(ret, e) {
             //console.log(ret, popUp, popUp.classList)
-
-            //e= eventet, altså klik. Den stætter sig ift det target man trykker på.
+            //får ekstra information omkring retter
+            //e= eventet, altså klik. Den sætter sig ift det target man trykker på.
             //offsetTop + px, altså den sætter sig i toppen, + de px den har på y-aksen
             popUp.classList.remove("hidden");
             console.log(e.target.offsetTop, popUp.style.left);
@@ -523,7 +525,7 @@
             //            popUp.querySelector("#detalje").addEventListener("click", () => popUp.classList.add("hidden"));
         }
 
-
+        //Filtrerer retter, når man klikker på fx antipasti
         function addEventListenersToButtons() {
             document.querySelectorAll(".filter").forEach(elm => {
                 elm.addEventListener("click", filtrering);
