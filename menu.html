@@ -195,7 +195,13 @@
 
     #detalje button {
         font-size: 1.5rem;
-        margin: 0.5em;
+        /*        margin: 0.5em;*/
+        margin: 0 auto;
+        background-color: #F3EFEB;
+        border: none;
+        top: 0;
+        cursor: pointer;
+
     }
 
     #detalje p {
@@ -380,6 +386,7 @@
 
 
     }
+
 </style>
 
 
@@ -441,8 +448,8 @@
         <main></main>
 
         <section id="detalje" class="hidden">
-            <button>X</button>
             <article id="mad">
+                <button>X</button>
                 <h2></h2>
                 <p class="kort"></p>
                 <p class="allergener"></p>
@@ -528,5 +535,8 @@
             filter = this.dataset.kategori;
             visRetter();
         }
+
     </script>
-</body></html>
+</body>
+
+</html>
