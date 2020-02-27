@@ -380,8 +380,10 @@
 
 
     }
+
 </style>
 
+<!--TILBAGEKNAP-->
 
 <div class="knap">
     <div class="tilbage_knap">
@@ -398,8 +400,10 @@
     </section>
 
     <header>
+
+        <!-- FILTRERINGSKNAPPER -->
+
         <nav class="menu">
-            <!--        <div class="filter" data-retter="alle"></div>-->
             <div class="filter" id="forret" data-kategori="antipasti">
                 <p>ANTIPASTI</p>
             </div>
@@ -424,6 +428,8 @@
 
 <body>
 
+    <!--  DE FILTREREDE RETTER HENTET VIA JSON FRA GOOGLE SHEET  -->
+
     <div class="content_menu">
         <template>
             <article class="retter">
@@ -439,6 +445,8 @@
         </template>
 
         <main></main>
+
+        <!-- FILTRERET POPUP VINDUE MED INFO OMKRING ALLERGENER -->
 
         <section id="detalje" class="hidden">
             <button>X</button>
@@ -528,5 +536,8 @@
             filter = this.dataset.kategori;
             visRetter();
         }
+
     </script>
-</body></html>
+</body>
+
+</html>
